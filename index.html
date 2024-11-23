@@ -19,49 +19,45 @@
             align-items: center;
             padding: 20px;
             background-color: #111;
-            position: relative; /* Remove fixed positioning */
-            z-index: 1000; /* Keep navbar on top */
+            position: relative;
+            z-index: 1000;
         }
 
         /* Logo on the left side */
         header .logo img {
-            height: 80px; /* Increased size of the logo */
+            height: 80px;
         }
 
         /* Navigation aligned to the right */
-        nav {
-            position: relative;
-        }
-
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
-            background-color: transparent; /* No background color */
+            background-color: transparent;
             border-radius: 20px;
         }
 
         nav ul li {
-            margin-left: 20px; /* Space between items */
+            margin-left: 20px;
             position: relative;
         }
 
         nav ul li a {
             color: white;
             padding: 15px 25px;
-            font-size: 24px; /* Increased font size for larger text */
+            font-size: 24px;
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
-            background-color: transparent; /* No background color */
+            background-color: transparent;
         }
 
         /* Dropdown Styles */
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: black; /* Set background to black */
+            background-color: black;
             min-width: 160px;
             z-index: 1;
             border-radius: 5px;
@@ -70,7 +66,7 @@
         .dropdown-content a {
             color: white;
             padding: 12px 16px;
-            text-decoration: none; /* Remove underline from dropdown links */
+            text-decoration: none;
             display: block;
         }
 
@@ -85,69 +81,11 @@
             background-color: black;
         }
 
-        /* Full-width image at the top */
+        /* Full-width image */
         .top-image {
-            width: 100%; /* Make the image take up the full width */
-            height: 600px; /* Set a fixed height for the image */
+            width: 100%;
+            height: 600px;
             object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 0; /* Ensure the image sits below the header */
-        }
-
-        /* Home section with text and trophy image side by side */
-        .home {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row; /* Side by side layout */
-            background: linear-gradient(to bottom, #FF6347, #8B0000); /* Gradient from light red to dark red */
-            padding: 50px 20px;
-            padding-top: 650px; /* Add padding to avoid overlap with fixed navbar and top image */
-            position: relative; /* Ensure the content stays above the image */
-            z-index: 1; /* Set higher z-index to ensure content is above the image */
-        }
-
-        /* Content area with text */
-        .home .content {
-            max-width: 700px;
-            text-align: left;
-            padding: 20px;
-            margin-right: 20px; /* Space between text and image */
-        }
-
-        .home h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .home p {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        /* Trophy image styles */
-        .trophy-image {
-            width: 700px; /* Same width as the text content */
-            height: auto;
-            object-fit: cover;
-        }
-
-        /* Discord Button */
-        .discord-button {
-            background-color: red;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 10px;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: box-shadow 0.3s, transform 0.3s;
-        }
-
-        .discord-button:hover {
-            transform: scale(1.1);
         }
     </style>
 </head>
@@ -166,11 +104,10 @@
                         <a href="gamemode.html">Gamemode</a>
                     </div>
                 </li>
-                <!-- About Us Dropdown -->
                 <li class="dropdown">
                     <a href="#">About Us</a>
                     <div class="dropdown-content">
-                        <a href="index.html">Information</a>
+                        <a href="information.html">Information</a>
                         <a href="https://discord.gg/ultimategorillatag" target="_blank">Discord</a>
                         <a href="https://www.twitch.tv/ucgt_bestleague" target="_blank">Twitch</a>
                     </div>
@@ -180,22 +117,8 @@
     </header>
 
     <main>
-        <section id="home" class="home">
-            <!-- Full-width image at the top -->
-            <img src="lv_0_20241123142722.gif" alt="Banner Image" class="top-image">
-
-            <!-- Content with text and trophy image side by side -->
-            <div class="content">
-                <h1>Welcome to Ultimate Gorilla Tag</h1>
-                <p>We are a competitive gorilla tag league dedicated to pushing the limits of skill and strategy in this exciting VR game.</p>
-                <p>Our league offers intense, fast-paced matches with gamemodes designed just for UGT (Ultimate Gorilla Tag). Whether you're a seasoned veteran or a newcomer, you'll find opportunities to attempt to get your team in the next season of UGT.</p>
-                <p>Each season brings unforgettable highlights, including crowning a Season MVP, Finals Champion, and Seeding Champion. Show off your skills, earn recognition, and climb the ranks! To get your team to the top!</p>
-                <p>Join our community of passionate players, learn about our custom rules, and become part of the Ultimate Gorilla Tag legacy. We're more than just a league, we're a group of competitors driven by fun and growth. To win the seasons! Will your team win...</p>
-                <a href="https://discord.gg/ultimategorillatag" class="discord-button">Join our Discord</a>
-            </div>
-
-            <img src="trophyGorilla.webp" alt="Trophy Gorilla" class="trophy-image">
-        </section>
+        <!-- Full-width image -->
+        <img src="IMG_1047.webp" alt="Top Banner" class="top-image">
     </main>
 
     <footer>
