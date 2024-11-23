@@ -21,12 +21,10 @@
             position: relative;
         }
 
-        /* Logo */
         header .logo img {
             height: 50px;
         }
 
-        /* Centering Navigation */
         nav {
             position: absolute;
             left: 50%;
@@ -54,7 +52,6 @@
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
-            transition: color 0.3s;
         }
 
         nav ul li a:hover {
@@ -83,49 +80,56 @@
         }
 
         .gamemode {
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 50px;
-            background-color: #111;
+            background: url('IMG_1043.webp') no-repeat center center/cover;
             color: white;
+            min-height: 100vh; /* Makes the section fill the viewport height */
         }
 
-        .gamemode h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-
-        .gamemode p {
-            font-size: 1.2rem;
+        .gamemode .content {
+            flex: 1;
+            margin: 20px;
             padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
             background-color: rgba(0, 0, 0, 0.8);
             border: 2px solid red;
             border-radius: 20px;
-            text-shadow: 0 0 10px red;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-            animation: glow 2s infinite alternate;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
         }
 
-        .gamemode a {
-            color: red;
+        .gamemode .content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .rules-button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
             font-weight: bold;
-            text-decoration: underline;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            border: 2px solid red;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .rules-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+        }
+
+        .button-container {
+            margin-top: 50px;
         }
 
         footer {
             text-align: center;
             padding: 20px;
             background-color: black;
-        }
-
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-            }
-            100% {
-                box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
-            }
         }
     </style>
 </head>
@@ -151,11 +155,18 @@
 
     <main>
         <section class="gamemode">
-            <h2>Gamemode</h2>
-            <p><strong>Starting Positions:</strong> Runner team choose where they start in forest, tagger team starts on gazebo. When runner team is ready, the referee will say "runners run" giving the runners 3 seconds to run. After the 3 seconds are up the referee will say "taggers tag" releasing the taggers. The tagger teams task is to tag the runner team as quick as possible, the runner teams task is to run for as long as possible from the tagger team. </p>
-            <p><strong>Match Duration:</strong> The team that gets the longest run time when both teams have ran and tagged, wins the round. All matches goes first to five points, if both teams agree the match can go first to three points. Timecap is always 3 minutes every round/match.</p>
-            <p><strong>Our Competitive Rules</strong> are in our <a href="https://discord.gg/ultimategorillatag" target="_blank">Discord Server</a>.</p>
+            <div class="content">
+                <h3>Starting Positions</h3>
+                <p>Runner team chooses where they start in forest, tagger team starts on gazebo. When the runner team is ready, the referee will say "runners run," giving the runners 3 seconds to run. After the 3 seconds, the referee will say "taggers tag," releasing the taggers. The tagger team's task is to tag the runner team as quickly as possible, while the runner team's task is to evade tagging for as long as possible.</p>
+            </div>
+            <div class="content">
+                <h3>Match Duration</h3>
+                <p>The team with the longest run time wins the round after both teams have run and tagged. Matches go first to five points, or first to three points if both teams agree. Timecap for each round/match is always 3 minutes.</p>
+            </div>
         </section>
+        <div class="button-container">
+            <a href="rules.html" class="rules-button">Rules Here</a>
+        </div>
     </main>
 
     <footer>
