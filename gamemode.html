@@ -8,8 +8,16 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: black;
             color: white;
+            background: linear-gradient(90deg, rgb(255, 50, 50), rgb(150, 0, 0), rgb(255, 100, 100));
+            background-size: 200% 200%;
+            animation: gradient-animation 6s infinite alternate;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         header {
@@ -19,17 +27,11 @@
             padding: 20px;
             background-color: #111;
             position: relative;
+            z-index: 1000;
         }
 
-        /* Logo on the left side, made bigger */
         header .logo img {
-            height: 80px; /* Increased size of the logo */
-        }
-
-        /* Navigation aligned to the right */
-        nav {
-            position: absolute;
-            right: 20px; /* Move nav to the right */
+            height: 80px;
         }
 
         nav ul {
@@ -37,75 +39,79 @@
             margin: 0;
             padding: 0;
             display: flex;
-            background-color: transparent; /* No background color */
-            border-radius: 20px;
         }
 
         nav ul li {
-            margin-left: 20px; /* Space between items */
+            margin-left: 20px;
             position: relative;
         }
 
         nav ul li a {
             color: white;
-            padding: 15px 25px; /* Increased padding for better spacing */
-            font-size: 24px; /* Increased font size for larger text */
+            padding: 15px 25px;
+            font-size: 24px;
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
-            transition: none; /* Removed transition */
-            border: none; /* Removed any border */
-            background-color: transparent; /* No background color */
         }
 
-        /* Remove hover effect and background change on hover */
-        nav ul li a:hover {
-            background-color: transparent; /* No background change on hover */
-            color: white; /* Keep text color unchanged */
-        }
-
-        nav .dropdown-content {
+        /* Dropdown Styles */
+        .dropdown-content {
             display: none;
             position: absolute;
             background-color: black;
-            min-width: 160px;
+            min-width: 200px; /* Match reference page */
             z-index: 1;
             border-radius: 5px;
+            padding: 10px 0; /* Adds space inside dropdown */
         }
 
-        nav .dropdown-content a {
+        .dropdown-content a {
             color: white;
-            padding: 12px 16px;
+            padding: 10px 16px; /* Matches reference spacing */
+            text-decoration: none;
             display: block;
-            text-align: center;
-            text-decoration: none; /* Remove underline from dropdown links */
+            text-align: left;
+            font-size: 24px; /* Same size as reference page */
+            font-weight: bold; /* Ensure consistency */
         }
 
-        nav .dropdown:hover .dropdown-content {
+        .dropdown-content a:not(:last-child) {
+            margin-bottom: 8px; /* Add spacing between links */
+        }
+
+        .dropdown:hover .dropdown-content {
             display: block;
         }
 
         .gamemode {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+            justify-content: center;
             padding: 50px;
-            background: url('IMG_1043.webp') no-repeat center center/cover;
-            color: white;
-            min-height: 100vh; /* Makes the section fill the viewport height */
+            min-height: 100vh; /* Full viewport height */
         }
 
-        .gamemode .content {
+        .gamemode img {
             flex: 1;
-            margin: 20px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 2px solid red;
-            border-radius: 20px;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            max-width: 70%;
+            height: auto;
+            margin-right: -50px; /* Overlap the text container */
         }
 
-        .gamemode .content h3 {
+        .text-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .text-box {
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .text-box h3 {
             font-size: 2rem;
             margin-bottom: 20px;
         }
@@ -118,18 +124,13 @@
             font-size: 16px;
             font-weight: bold;
             text-decoration: none;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-            border: 2px solid red;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            align-self: center;
         }
 
         .rules-button:hover {
             transform: scale(1.1);
             box-shadow: 0 0 20px rgba(255, 0, 0, 1);
-        }
-
-        .button-container {
-            margin-top: 50px;
         }
 
         footer {
@@ -145,7 +146,7 @@
         <div class="logo">
             <a href="index.html"><img src="IMG_1018.webp" alt="Ultimate Gorilla Tag Logo"></a>
         </div>
-               <nav>
+        <nav>
             <ul>
                 <li class="dropdown">
                     <a href="#">Tournament</a>
@@ -168,18 +169,19 @@
 
     <main>
         <section class="gamemode">
-            <div class="content">
-                <h3>Starting Positions</h3>
-                <p>Runner team choose where they start in forest, tagger team starts on gazebo. When runner team is ready, the referee will say "runners run" giving the runners a 3 second head start. After the 3 seconds are up, the referee will say "taggers tag" releasing the taggers. The tagger teams task is to tag the runner team as quick as possible, the runner teams task is to run for as long as possible from the tagger team. </p>
-            </div>
-            <div class="content">
-                <h3>Match Duration</h3>
-                <p>The team that gets the longest run time when both teams have ran and tagged, wins the round. All matches goes first to five points, if both teams agree the match can go first to three points. Timecap is always 3 minutes every round/match.</p>
+            <img src="ugt_website_image.webp" alt="Gorilla Tag Gameplay">
+            <div class="text-container">
+                <div class="text-box">
+                    <h3>Starting Positions</h3>
+                    <p>Runner team choose where they start in forest, tagger team starts on gazebo. When runner team is ready, the referee will say "runners run" giving the runners a 3 second head start. After the 3 seconds are up, the referee will say "taggers tag" releasing the taggers. The tagger teams task is to tag the runner team as quick as possible, the runner teams task is to run for as long as possible from the tagger team.</p>
+                </div>
+                <div class="text-box">
+                    <h3>Match Duration</h3>
+                    <p>The team that gets the longest run time when both teams have ran and tagged, wins the round. All matches goes first to five points, if both teams agree the match can go first to three points. Timecap is always 3 minutes every round/match.</p>
+                </div>
+                <a href="rules.html" class="rules-button">Rules Here</a>
             </div>
         </section>
-        <div class="button-container">
-            <a href="rules.html" class="rules-button">Rules Here</a>
-        </div>
     </main>
 
     <footer>
