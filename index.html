@@ -81,10 +81,10 @@
             background-color: black;
         }
 
-        /* Full-width image */
-        .top-image {
+        /* Full-width UHD video */
+        .top-video {
             width: 100%;
-            height: 600px;
+            height: auto;
             object-fit: cover;
         }
     </style>
@@ -117,8 +117,12 @@
     </header>
 
     <main>
-        <!-- Full-width image -->
-        <img src="RPReplay_Final1732382593.mov" alt="Top Banner" class="top-image">
+        <!-- Full-width UHD video -->
+        <video class="top-video" autoplay muted loop playsinline>
+            <!-- Replace with your UHD video file path -->
+            <source src="RPReplay_Final1732382593.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </main>
 
     <footer>
