@@ -42,6 +42,7 @@
 
         nav ul li {
             margin-right: 20px;
+            position: relative;
         }
 
         nav ul li a {
@@ -56,6 +57,26 @@
         nav ul li a:hover {
             background-color: #333;
             color: red;
+        }
+
+        nav .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        nav .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            display: block;
+            text-align: center;
+        }
+
+        nav .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         .about-us {
@@ -111,8 +132,13 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="gamemode.html">Gamemode</a></li>
-                <li><a href="matches.html">Matches</a></li>
+                <li class="dropdown">
+                    <a href="#">Tournament</a>
+                    <div class="dropdown-content">
+                        <a href="matches.html">Matches</a>
+                        <a href="gamemode.html">Gamemode</a>
+                    </div>
+                </li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
