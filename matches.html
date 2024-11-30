@@ -18,18 +18,10 @@
             align-items: center;
             padding: 20px;
             background-color: #111;
-            position: relative;
         }
 
-        /* Logo on the left side, made bigger */
         header .logo img {
-            height: 80px; /* Increased size of the logo */
-        }
-
-        /* Navigation aligned to the right */
-        nav {
-            position: absolute;
-            right: 20px; /* Move nav to the right */
+            height: 80px;
         }
 
         nav ul {
@@ -37,34 +29,23 @@
             margin: 0;
             padding: 0;
             display: flex;
-            background-color: transparent; /* Removed background color */
-            border-radius: 20px;
         }
 
         nav ul li {
-            margin-left: 20px; /* Space between items */
+            margin-left: 20px;
             position: relative;
         }
 
         nav ul li a {
             color: white;
-            padding: 15px 25px; /* Increased padding for better spacing */
-            font-size: 24px; /* Increased font size for larger text */
+            padding: 15px 25px;
+            font-size: 24px;
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
-            transition: none; /* Removed transition */
-            border: none; /* Removed any border */
-            background-color: transparent; /* No background color */
         }
 
-        /* Remove hover effect and background change on hover */
-        nav ul li a:hover {
-            background-color: transparent; /* No background change on hover */
-            color: white; /* Keep text color unchanged */
-        }
-
-        nav .dropdown-content {
+        .dropdown-content {
             display: none;
             position: absolute;
             background-color: black;
@@ -73,22 +54,15 @@
             border-radius: 5px;
         }
 
-        nav .dropdown-content a {
+        .dropdown-content a {
             color: white;
             padding: 12px 16px;
-            display: block;
-            text-align: center;
-            text-decoration: none; /* Remove underline from dropdown links */
-        }
-
-        nav .dropdown:hover .dropdown-content {
+            text-decoration: none;
             display: block;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: black;
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         iframe {
@@ -102,10 +76,43 @@
         iframe:hover {
             border: 3px solid black;
         }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 0;
+                width: 100%;
+            }
+
+            nav ul li a {
+                text-align: center;
+                padding: 10px 0;
+                font-size: 18px;
+            }
+
+            iframe {
+                height: 300px;
+            }
+        }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo">
             <a href="index.html"><img src="IMG_1018.webp" alt="Ultimate Gorilla Tag Logo"></a>
@@ -141,6 +148,5 @@
     <footer>
         <p>© 2024 Ultimate Gorilla Tag League</p>
     </footer>
-
 </body>
 </html>
