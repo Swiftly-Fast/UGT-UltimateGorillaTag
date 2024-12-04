@@ -8,27 +8,32 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #8B0000; /* Dark red background */
             color: white;
+            background: linear-gradient(90deg, blue, red);
+            background-size: 200% 200%;
+            animation: gradientShift 10s ease infinite;
         }
 
-        /* Header with right-aligned nav */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background-color: #111;
+            background-color: rgba(0, 0, 0, 0.8);
             position: relative;
             z-index: 1000;
         }
 
-        /* Logo on the left side */
         header .logo img {
             height: 80px;
         }
 
-        /* Navigation aligned to the right */
         nav ul {
             list-style-type: none;
             margin: 0;
@@ -53,7 +58,6 @@
             background-color: transparent;
         }
 
-        /* Dropdown Styles */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -70,7 +74,6 @@
             display: block;
         }
 
-        /* Show dropdown on hover */
         .dropdown:hover .dropdown-content {
             display: block;
         }
@@ -78,17 +81,36 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
-        /* Full-width UHD video */
         .top-video {
             width: 100%;
             height: auto;
             object-fit: cover;
         }
 
-        /* Responsive for mobile */
+        .content-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content-section img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .content-section h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .content-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -145,12 +167,37 @@
     </header>
 
     <main>
-        <!-- Full-width UHD video -->
         <video class="top-video" autoplay muted loop playsinline>
-            <!-- Replace with your UHD video file path -->
             <source src="lv_0_20241204212511.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+
+        <section class="content-section">
+            <h1><b>Tournament</b></h1>
+            <p>
+                Watch or participate against the best Gorilla Tag teams in the UGT tournament, where skill and strategy collide to crown the ultimate champions. Compete for the exciting prize pool and show the world your mastery of Gorilla Tag. 
+                For more information, join our vibrant Discord community. Ready to dive in? Find teams <a href="https://ultimategorillatag.pages.dev/matches" style="color: #FFD700;">here</a>.
+            </p>
+            <img src="trophyGorilla.webp" alt="Gorilla holding trophy">
+        </section>
+
+        <section class="content-section">
+            <h1><b>What is Ultimate Gorilla Tag?</b></h1>
+            <p>
+                Ultimate Gorilla Tag (UGT) is a groundbreaking VR esports league that revolves around Gorilla Tag, an innovative game with a unique movement system. 
+                UGT unites players of all skill levels, creating a hub where competitiveness, sportsmanship, and community thrive. Whether you're an aspiring rookie or a seasoned pro, UGT is the home for all things Gorilla Tag.
+            </p>
+            <img src="ugt_website_image.webp" alt="Monkey getting tagged">
+        </section>
+
+        <section class="content-section">
+            <h1><b>Discord</b></h1>
+            <p>
+                The UGT Discord is the lifeblood of our community. It's where you can meet like-minded players, discover your future teammates, participate in thrilling tournaments, and stay updated on the latest league news. 
+                From casual discussions to heated competitive debates, the Discord is buzzing with activity. Don't miss out—join us <a href="https://discord.gg/fm2DvQ2CZk" style="color: #FFD700;">here</a>.
+            </p>
+            <img src="discord.webp" alt="Discord logo">
+        </section>
     </main>
 
     <footer>
