@@ -10,8 +10,8 @@
             font-family: Arial, sans-serif;
             color: white;
             background: linear-gradient(90deg, blue, red);
-            background-size: 200% 200%;
-            animation: gradientShift 10s ease infinite;
+            background-size: 400% 400%;
+            animation: gradientShift 15s infinite linear;
         }
 
         @keyframes gradientShift {
@@ -25,8 +25,9 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            position: relative;
+            background-color: black;
+            position: sticky;
+            top: 0;
             z-index: 1000;
         }
 
@@ -39,8 +40,6 @@
             margin: 0;
             padding: 0;
             display: flex;
-            background-color: transparent;
-            border-radius: 20px;
         }
 
         nav ul li {
@@ -55,33 +54,30 @@
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
-            background-color: transparent;
         }
 
-        .dropdown-content {
+        nav ul li .dropdown-content {
             display: none;
             position: absolute;
-            background-color: black;
-            min-width: 160px;
-            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
+            z-index: 1;
         }
 
-        .dropdown-content a {
+        nav ul li .dropdown-content a {
             color: white;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
+        nav ul li .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
+        nav ul li:hover .dropdown-content {
+            display: block;
         }
 
         .top-video {
@@ -90,25 +86,54 @@
             object-fit: cover;
         }
 
-        .content-section {
-            padding: 20px;
+        footer {
             text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .content-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 30px;
         }
 
         .content-section img {
-            max-width: 100%;
+            flex: 1;
+            max-width: 50%;
             height: auto;
-            margin: 20px 0;
         }
 
-        .content-section h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .content-section p {
+        .content-section .bubble {
+            flex: 1;
+            margin: 0 20px;
+            padding: 20px;
             font-size: 1.2rem;
-            line-height: 1.6;
+            text-align: left;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .content-section .bubble:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .discord-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .discord-section img {
+            max-width: 50px;
+            margin-left: 10px;
         }
 
         @media (max-width: 768px) {
@@ -133,14 +158,25 @@
                 font-size: 18px;
             }
 
-            .top-video {
-                height: 250px;
+            .content-section {
+                flex-direction: column;
+            }
+
+            .content-section img {
+                max-width: 100%;
+            }
+
+            .content-section .bubble {
+                text-align: center;
+            }
+
+            .discord-section img {
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo">
             <a href="index.html"><img src="IMG_1018.webp" alt="Ultimate Gorilla Tag Logo"></a>
@@ -166,35 +202,33 @@
         </nav>
     </header>
 
-    <main>
-        <video class="top-video" autoplay muted loop playsinline>
-            <source src="lv_0_20241204212511.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <video class="top-video" autoplay muted loop playsinline>
+        <source src="lv_0_20241204212511.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
+    <main>
         <section class="content-section">
-            <h1><b>Tournament</b></h1>
-            <p>
-                Watch or participate against the best Gorilla Tag teams in the UGT tournament, where skill and strategy collide to crown the ultimate champions. Compete for the exciting prize pool and show the world your mastery of Gorilla Tag. 
-                For more information, join our vibrant Discord community. Ready to dive in? Find teams <a href="https://ultimategorillatag.pages.dev/matches" style="color: #FFD700;">here</a>.
-            </p>
             <img src="trophyGorilla.webp" alt="Gorilla holding trophy">
+            <div class="bubble">
+                <h1>Tournament</h1>
+                <p>Watch or participate against the best Gorilla Tag teams in the UGT tournament, to win the prize pool. For more info join the Discord. Find teams <a href="https://ultimategorillatag.pages.dev/matches" style="color: #FFD700;">here</a>.</p>
+            </div>
         </section>
 
         <section class="content-section">
-            <h1><b>What is Ultimate Gorilla Tag?</b></h1>
-            <p>
-                Ultimate Gorilla Tag (UGT) is a groundbreaking VR esports league that revolves around Gorilla Tag, an innovative game with a unique movement system. 
-                UGT unites players of all skill levels, creating a hub where competitiveness, sportsmanship, and community thrive. Whether you're an aspiring rookie or a seasoned pro, UGT is the home for all things Gorilla Tag.
-            </p>
+            <div class="bubble">
+                <h1>What is Ultimate Gorilla Tag?</h1>
+                <p>UGT is a VR esports league, focusing on Gorilla Tag and its one-of-a-kind movement system. UGT unites players of all skills and is the hub for all competitive Gorilla Tag players.</p>
+            </div>
             <img src="ugt_website_image.webp" alt="Monkey getting tagged">
         </section>
 
-        <section class="content-section">
-            <h1><b>Discord</b></h1>
+        <section class="discord-section">
+            <h1>Discord</h1>
             <p>
-                The UGT Discord is the lifeblood of our community. It's where you can meet like-minded players, discover your future teammates, participate in thrilling tournaments, and stay updated on the latest league news. 
-                From casual discussions to heated competitive debates, the Discord is buzzing with activity. Don't miss out—join us <a href="https://discord.gg/fm2DvQ2CZk" style="color: #FFD700;">here</a>.
+                The GTC Discord is the heart of our community. Meet new people, find your team, play tournaments, get updates, and so much more! 
+                Join <a href="https://discord.gg/fm2DvQ2CZk" style="color: #FFD700;">here</a>.
             </p>
             <img src="discord.webp" alt="Discord logo">
         </section>
@@ -203,6 +237,5 @@
     <footer>
         <p>© 2024 Ultimate Gorilla Tag League</p>
     </footer>
-
 </body>
 </html>
